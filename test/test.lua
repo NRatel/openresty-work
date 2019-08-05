@@ -1,7 +1,7 @@
 ngx.req.read_body()
 local args, err = ngx.req.get_uri_args()
 
-local http = require "http.http"
+local http = require "resty.http"
 local httpc = http.new()
 local res, err = httpc:request_uri("http://127.0.0.1:80/game", {
     method = "POST",
