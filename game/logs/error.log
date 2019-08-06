@@ -1,0 +1,41 @@
+2019/08/05 21:12:00 [alert] 13100#0: lua_code_cache is off; this will hurt performance in /home/nratel/openresty-work/game/conf/nginx-dev.conf:16
+2019/08/05 21:12:00 [notice] 13100#0: signal process started
+2019/08/05 21:12:03 [error] 13101#0: *31 lua entry thread aborted: runtime error: /home/nratel/openresty-work/game/./test/test.lua:14: attempt to index local 'res' (a nil value)
+stack traceback:
+coroutine 0:
+	/home/nratel/openresty-work/game/./test/test.lua: in main chunk, client: 1.119.163.126, server: localhost, request: "GET /test HTTP/1.1", host: "www.nratel.com:81"
+2019/08/06 00:15:07 [error] 13101#0: *34 "/home/nratel/openresty-work/game/html/index.html" is not found (2: No such file or directory), client: 58.177.235.178, server: localhost, request: "GET / HTTP/1.1", host: "39.107.138.17:81"
+2019/08/06 01:34:31 [error] 13101#0: *38 "/home/nratel/openresty-work/game/html/index.html" is not found (2: No such file or directory), client: 114.34.109.78, server: localhost, request: "GET / HTTP/1.1", host: "39.107.138.17:81"
+2019/08/06 02:35:38 [error] 13101#0: *41 "/home/nratel/openresty-work/game/html/index.html" is not found (2: No such file or directory), client: 1.36.93.140, server: localhost, request: "GET / HTTP/1.0"
+2019/08/06 05:53:42 [error] 13101#0: *46 "/home/nratel/openresty-work/game/html/index.html" is not found (2: No such file or directory), client: 213.82.79.59, server: localhost, request: "GET / HTTP/1.1", host: "39.107.138.17:81"
+2019/08/06 07:08:37 [error] 13101#0: *50 open() "/home/nratel/openresty-work/game/html/404/search_children.js" failed (2: No such file or directory), client: 120.132.3.65, server: localhost, request: "GET http://www.qq.com/404/search_children.js HTTP/1.1", host: "www.qq.com"
+2019/08/06 09:23:08 [error] 13101#0: *55 "/home/nratel/openresty-work/game/html/index.html" is not found (2: No such file or directory), client: 121.31.160.146, server: localhost, request: "GET / HTTP/1.1", host: "39.107.138.17:81"
+2019/08/06 10:23:09 [error] 13101#0: *56 lua entry thread aborted: runtime error: /home/nratel/openresty-work/game/./test/test.lua:14: attempt to index local 'res' (a nil value)
+stack traceback:
+coroutine 0:
+	/home/nratel/openresty-work/game/./test/test.lua: in main chunk, client: 1.119.163.126, server: localhost, request: "GET /test HTTP/1.1", host: "www.nratel.com:81"
+2019/08/06 10:23:25 [alert] 13919#0: lua_code_cache is off; this will hurt performance in /home/nratel/openresty-work/game/conf/nginx-dev.conf:16
+2019/08/06 10:23:25 [notice] 13919#0: signal process started
+2019/08/06 10:23:25 [alert] 12914#0: lua_code_cache is off; this will hurt performance in /home/nratel/openresty-work/game/conf/nginx-dev.conf:16
+2019/08/06 10:23:30 [error] 13920#0: *59 lua entry thread aborted: runtime error: /home/nratel/openresty-work/game/./test/test.lua:14: attempt to index local 'res' (a nil value)
+stack traceback:
+coroutine 0:
+	/home/nratel/openresty-work/game/./test/test.lua: in main chunk, client: 1.119.163.126, server: localhost, request: "GET /test HTTP/1.1", host: "www.nratel.com:81"
+2019/08/06 10:24:21 [alert] 13965#0: lua_code_cache is off; this will hurt performance in /home/nratel/openresty-work/game/conf/nginx-dev.conf:16
+2019/08/06 10:24:21 [notice] 13965#0: signal process started
+2019/08/06 10:24:21 [alert] 12914#0: lua_code_cache is off; this will hurt performance in /home/nratel/openresty-work/game/conf/nginx-dev.conf:16
+2019/08/06 10:24:23 [error] 13966#0: *60 lua entry thread aborted: runtime error: /home/nratel/openresty-work/game//app/lualib/resty/http.lua:575: bad argument #1 to 'send' (non-array table found)
+stack traceback:
+coroutine 0:
+	[C]: in function 'send'
+	/home/nratel/openresty-work/game//app/lualib/resty/http.lua:575: in function '_send_body'
+	/home/nratel/openresty-work/game//app/lualib/resty/http.lua:668: in function 'send_request'
+	/home/nratel/openresty-work/game//app/lualib/resty/http.lua:782: in function 'request'
+	/home/nratel/openresty-work/game//app/lualib/resty/http.lua:928: in function 'request_uri'
+	/home/nratel/openresty-work/game/./test/test.lua:3: in main chunk, client: 1.119.163.126, server: localhost, request: "GET /test HTTP/1.1", host: "www.nratel.com:81"
+2019/08/06 10:35:03 [alert] 14029#0: lua_code_cache is off; this will hurt performance in /home/nratel/openresty-work/game/conf/nginx-dev.conf:16
+2019/08/06 10:35:03 [notice] 14029#0: signal process started
+2019/08/06 10:35:03 [alert] 12914#0: lua_code_cache is off; this will hurt performance in /home/nratel/openresty-work/game/conf/nginx-dev.conf:16
+2019/08/06 10:35:12 [error] 14030#0: *63 attempt to set status 302 via ngx.exit after sending out the response status 200, client: 1.119.163.126, server: game-dev, request: "GET /test HTTP/1.1", host: "www.nratel.com:81"
+2019/08/06 11:37:51 [error] 14030#0: *67 "/home/nratel/openresty-work/game/html/index.html" is not found (2: No such file or directory), client: 220.184.87.109, server: game-dev, request: "GET / HTTP/1.1", host: "39.107.138.17:81"
+2019/08/06 15:01:56 [error] 14030#0: *72 "/home/nratel/openresty-work/game/html/index.html" is not found (2: No such file or directory), client: 37.218.237.13, server: game-dev, request: "GET / HTTP/1.1", host: "39.107.138.17:81"
