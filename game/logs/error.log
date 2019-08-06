@@ -166,3 +166,52 @@ coroutine 0:
 	[C]: in function 'require'
 	/home/nratel/openresty-work/game/./app/main.lua:53: in main chunk, client: 127.0.0.1, server: game-dev, request: "POST /game HTTP/1.1", host: "127.0.0.1:81"
 2019/08/06 16:00:48 [error] 14543#0: *93 attempt to set status 500 via ngx.exit after sending out the response status 200, client: 1.119.163.126, server: game-dev, request: "GET /test HTTP/1.1", host: "www.nratel.com:81"
+2019/08/06 16:28:31 [alert] 14725#0: lua_code_cache is off; this will hurt performance in /home/nratel/openresty-work/game/conf/nginx-dev.conf:16
+2019/08/06 16:28:31 [notice] 14725#0: signal process started
+2019/08/06 16:28:31 [alert] 12914#0: lua_code_cache is off; this will hurt performance in /home/nratel/openresty-work/game/conf/nginx-dev.conf:16
+2019/08/06 16:35:30 [alert] 14757#0: lua_code_cache is off; this will hurt performance in /home/nratel/openresty-work/game/conf/nginx-dev.conf:16
+2019/08/06 16:35:30 [notice] 14757#0: signal process started
+2019/08/06 16:35:30 [alert] 12914#0: lua_code_cache is off; this will hurt performance in /home/nratel/openresty-work/game/conf/nginx-dev.conf:16
+2019/08/06 16:35:39 [error] 14758#0: *100 lua entry thread aborted: runtime error: /home/nratel/openresty-work/game/./app/main.lua:54: bad argument #1 to 'print' (non-array table found)
+stack traceback:
+coroutine 0:
+	[C]: in function 'print'
+	/home/nratel/openresty-work/game/./app/main.lua:54: in main chunk, client: 127.0.0.1, server: game-dev, request: "POST /game HTTP/1.1", host: "127.0.0.1:81"
+2019/08/06 16:51:04 [error] 14758#0: *104 lua entry thread aborted: runtime error: /home/nratel/openresty-work/game/./app/main.lua:54: bad argument #1 to 'print' (non-array table found)
+stack traceback:
+coroutine 0:
+	[C]: in function 'print'
+	/home/nratel/openresty-work/game/./app/main.lua:54: in main chunk, client: 127.0.0.1, server: game-dev, request: "POST /game HTTP/1.1", host: "127.0.0.1:81"
+2019/08/06 16:55:47 [error] 14758#0: *108 lua entry thread aborted: runtime error: /home/nratel/openresty-work/game/./app/main.lua:54: bad argument #1 to 'print' (non-array table found)
+stack traceback:
+coroutine 0:
+	[C]: in function 'print'
+	/home/nratel/openresty-work/game/./app/main.lua:54: in main chunk, client: 127.0.0.1, server: game-dev, request: "POST /game HTTP/1.1", host: "127.0.0.1:81"
+2019/08/06 17:54:42 [error] 14758#0: *110 lua entry thread aborted: runtime error: /home/nratel/openresty-work/game/./app/main.lua:54: bad argument #1 to 'print' (non-array table found)
+stack traceback:
+coroutine 0:
+	[C]: in function 'print'
+	/home/nratel/openresty-work/game/./app/main.lua:54: in main chunk, client: 1.119.163.126, server: game-dev, request: "GET /game HTTP/1.1", host: "www.nratel.com:81"
+2019/08/06 17:54:42 [error] 14758#0: *109 lua entry thread aborted: runtime error: /home/nratel/openresty-work/game/./app/main.lua:54: bad argument #1 to 'print' (non-array table found)
+stack traceback:
+coroutine 0:
+	[C]: in function 'print'
+	/home/nratel/openresty-work/game/./app/main.lua:54: in main chunk, client: 1.119.163.126, server: game-dev, request: "GET /game HTTP/1.1", host: "www.nratel.com:81"
+2019/08/06 17:54:42 [error] 14758#0: *111 lua entry thread aborted: runtime error: /home/nratel/openresty-work/game/./app/main.lua:54: bad argument #1 to 'print' (non-array table found)
+stack traceback:
+coroutine 0:
+	[C]: in function 'print'
+	/home/nratel/openresty-work/game/./app/main.lua:54: in main chunk, client: 1.119.163.126, server: game-dev, request: "GET /game HTTP/1.1", host: "www.nratel.com:81"
+2019/08/06 17:54:42 [error] 14758#0: *112 lua entry thread aborted: runtime error: /home/nratel/openresty-work/game/./app/main.lua:54: bad argument #1 to 'print' (non-array table found)
+stack traceback:
+coroutine 0:
+	[C]: in function 'print'
+	/home/nratel/openresty-work/game/./app/main.lua:54: in main chunk, client: 1.119.163.126, server: game-dev, request: "GET /game HTTP/1.1", host: "www.nratel.com:81"
+2019/08/06 17:54:47 [error] 14758#0: *114 lua entry thread aborted: runtime error: /home/nratel/openresty-work/game/./app/main.lua:54: bad argument #1 to 'print' (non-array table found)
+stack traceback:
+coroutine 0:
+	[C]: in function 'print'
+	/home/nratel/openresty-work/game/./app/main.lua:54: in main chunk, client: 1.119.163.126, server: game-dev, request: "GET /game HTTP/1.1", host: "www.nratel.com:81"
+2019/08/06 17:55:22 [alert] 14883#0: lua_code_cache is off; this will hurt performance in /home/nratel/openresty-work/game/conf/nginx-dev.conf:16
+2019/08/06 17:55:22 [notice] 14883#0: signal process started
+2019/08/06 17:55:22 [alert] 12914#0: lua_code_cache is off; this will hurt performance in /home/nratel/openresty-work/game/conf/nginx-dev.conf:16
