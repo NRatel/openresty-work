@@ -39,3 +39,130 @@ coroutine 0:
 2019/08/06 10:35:12 [error] 14030#0: *63 attempt to set status 302 via ngx.exit after sending out the response status 200, client: 1.119.163.126, server: game-dev, request: "GET /test HTTP/1.1", host: "www.nratel.com:81"
 2019/08/06 11:37:51 [error] 14030#0: *67 "/home/nratel/openresty-work/game/html/index.html" is not found (2: No such file or directory), client: 220.184.87.109, server: game-dev, request: "GET / HTTP/1.1", host: "39.107.138.17:81"
 2019/08/06 15:01:56 [error] 14030#0: *72 "/home/nratel/openresty-work/game/html/index.html" is not found (2: No such file or directory), client: 37.218.237.13, server: game-dev, request: "GET / HTTP/1.1", host: "39.107.138.17:81"
+2019/08/06 15:35:21 [error] 14030#0: *75 attempt to set status 302 via ngx.exit after sending out the response status 200, client: 1.119.163.126, server: game-dev, request: "GET /test HTTP/1.1", host: "www.nratel.com:81"
+2019/08/06 15:42:48 [alert] 14462#0: lua_code_cache is off; this will hurt performance in /home/nratel/openresty-work/game/conf/nginx-dev.conf:16
+2019/08/06 15:42:48 [notice] 14462#0: signal process started
+2019/08/06 15:42:48 [alert] 12914#0: lua_code_cache is off; this will hurt performance in /home/nratel/openresty-work/game/conf/nginx-dev.conf:16
+2019/08/06 15:43:10 [error] 14463#0: *80 lua entry thread aborted: runtime error: /home/nratel/openresty-work/game/./app/main.lua:21: module 'pb' not found:
+	no field package.preload['pb']
+	no file '/home/nratel/openresty-work/game//app/lualib/pb.lua'
+	no file '/usr/local/openresty/site/lualib/pb.ljbc'
+	no file '/usr/local/openresty/site/lualib/pb/init.ljbc'
+	no file '/usr/local/openresty/lualib/pb.ljbc'
+	no file '/usr/local/openresty/lualib/pb/init.ljbc'
+	no file '/usr/local/openresty/site/lualib/pb.lua'
+	no file '/usr/local/openresty/site/lualib/pb/init.lua'
+	no file '/usr/local/openresty/lualib/pb.lua'
+	no file '/usr/local/openresty/lualib/pb/init.lua'
+	no file './pb.lua'
+	no file '/usr/local/openresty/luajit/share/luajit-2.1.0-beta3/pb.lua'
+	no file '/usr/local/share/lua/5.1/pb.lua'
+	no file '/usr/local/share/lua/5.1/pb/init.lua'
+	no file '/usr/local/openresty/luajit/share/lua/5.1/pb.lua'
+	no file '/usr/local/openresty/luajit/share/lua/5.1/pb/init.lua'
+	no file '/home/nratel/openresty-work/game//app/cualib/pb.so'
+	no file '/usr/local/openresty/site/lualib/pb.so'
+	no file '/usr/local/openresty/lualib/pb.so'
+	no file './pb.so'
+	no file '/usr/local/lib/lua/5.1/pb.so'
+	no file '/usr/local/openresty/luajit/lib/lua/5.1/pb.so'
+	no file '/usr/local/lib/lua/5.1/loadall.so'
+stack traceback:
+coroutine 0:
+	[C]: in function 'require'
+	/home/nratel/openresty-work/game/./app/main.lua:21: in main chunk, client: 127.0.0.1, server: game-dev, request: "POST /game HTTP/1.1", host: "127.0.0.1:81"
+2019/08/06 15:43:10 [error] 14463#0: *77 attempt to set status 500 via ngx.exit after sending out the response status 200, client: 1.119.163.126, server: game-dev, request: "GET /test HTTP/1.1", host: "www.nratel.com:81"
+2019/08/06 15:54:49 [error] 14463#0: *85 lua entry thread aborted: runtime error: /home/nratel/openresty-work/game/./app/main.lua:21: module 'pb' not found:
+	no field package.preload['pb']
+	no file '/home/nratel/openresty-work/game//app/lualib/pb.lua'
+	no file '/usr/local/openresty/site/lualib/pb.ljbc'
+	no file '/usr/local/openresty/site/lualib/pb/init.ljbc'
+	no file '/usr/local/openresty/lualib/pb.ljbc'
+	no file '/usr/local/openresty/lualib/pb/init.ljbc'
+	no file '/usr/local/openresty/site/lualib/pb.lua'
+	no file '/usr/local/openresty/site/lualib/pb/init.lua'
+	no file '/usr/local/openresty/lualib/pb.lua'
+	no file '/usr/local/openresty/lualib/pb/init.lua'
+	no file './pb.lua'
+	no file '/usr/local/openresty/luajit/share/luajit-2.1.0-beta3/pb.lua'
+	no file '/usr/local/share/lua/5.1/pb.lua'
+	no file '/usr/local/share/lua/5.1/pb/init.lua'
+	no file '/usr/local/openresty/luajit/share/lua/5.1/pb.lua'
+	no file '/usr/local/openresty/luajit/share/lua/5.1/pb/init.lua'
+	no file '/home/nratel/openresty-work/game//app/cualib/pb.so'
+	no file '/usr/local/openresty/site/lualib/pb.so'
+	no file '/usr/local/openresty/lualib/pb.so'
+	no file './pb.so'
+	no file '/usr/local/lib/lua/5.1/pb.so'
+	no file '/usr/local/openresty/luajit/lib/lua/5.1/pb.so'
+	no file '/usr/local/lib/lua/5.1/loadall.so'
+stack traceback:
+coroutine 0:
+	[C]: in function 'require'
+	/home/nratel/openresty-work/game/./app/main.lua:21: in main chunk, client: 127.0.0.1, server: game-dev, request: "POST /game HTTP/1.1", host: "127.0.0.1:81"
+2019/08/06 15:54:49 [error] 14463#0: *82 attempt to set status 500 via ngx.exit after sending out the response status 200, client: 1.119.163.126, server: game-dev, request: "GET /test HTTP/1.1", host: "www.nratel.com:81"
+2019/08/06 15:56:52 [error] 14463#0: *86 "/home/nratel/openresty-work/game/html/index.html" is not found (2: No such file or directory), client: 173.160.86.171, server: game-dev, request: "GET / HTTP/1.1", host: "39.107.138.17:81"
+2019/08/06 15:59:12 [alert] 14523#0: lua_code_cache is off; this will hurt performance in /home/nratel/openresty-work/game/conf/nginx-dev.conf:16
+2019/08/06 15:59:12 [notice] 14523#0: signal process started
+2019/08/06 15:59:12 [alert] 12914#0: lua_code_cache is off; this will hurt performance in /home/nratel/openresty-work/game/conf/nginx-dev.conf:16
+2019/08/06 15:59:17 [error] 14524#0: *90 lua entry thread aborted: runtime error: /home/nratel/openresty-work/game/./app/main.lua:22: module 'protoc' not found:
+	no field package.preload['protoc']
+	no file '/home/nratel/openresty-work/game//app/lualib/protoc.lua'
+	no file '/usr/local/openresty/site/lualib/protoc.ljbc'
+	no file '/usr/local/openresty/site/lualib/protoc/init.ljbc'
+	no file '/usr/local/openresty/lualib/protoc.ljbc'
+	no file '/usr/local/openresty/lualib/protoc/init.ljbc'
+	no file '/usr/local/openresty/site/lualib/protoc.lua'
+	no file '/usr/local/openresty/site/lualib/protoc/init.lua'
+	no file '/usr/local/openresty/lualib/protoc.lua'
+	no file '/usr/local/openresty/lualib/protoc/init.lua'
+	no file './protoc.lua'
+	no file '/usr/local/openresty/luajit/share/luajit-2.1.0-beta3/protoc.lua'
+	no file '/usr/local/share/lua/5.1/protoc.lua'
+	no file '/usr/local/share/lua/5.1/protoc/init.lua'
+	no file '/usr/local/openresty/luajit/share/lua/5.1/protoc.lua'
+	no file '/usr/local/openresty/luajit/share/lua/5.1/protoc/init.lua'
+	no file '/home/nratel/openresty-work/game//app/clib/protoc.so'
+	no file '/usr/local/openresty/site/lualib/protoc.so'
+	no file '/usr/local/openresty/lualib/protoc.so'
+	no file './protoc.so'
+	no file '/usr/local/lib/lua/5.1/protoc.so'
+	no file '/usr/local/openresty/luajit/lib/lua/5.1/protoc.so'
+	no file '/usr/local/lib/lua/5.1/loadall.so'
+stack traceback:
+coroutine 0:
+	[C]: in function 'require'
+	/home/nratel/openresty-work/game/./app/main.lua:22: in main chunk, client: 127.0.0.1, server: game-dev, request: "POST /game HTTP/1.1", host: "127.0.0.1:81"
+2019/08/06 15:59:17 [error] 14524#0: *88 attempt to set status 500 via ngx.exit after sending out the response status 200, client: 1.119.163.126, server: game-dev, request: "GET /test HTTP/1.1", host: "www.nratel.com:81"
+2019/08/06 16:00:44 [alert] 14542#0: lua_code_cache is off; this will hurt performance in /home/nratel/openresty-work/game/conf/nginx-dev.conf:16
+2019/08/06 16:00:44 [notice] 14542#0: signal process started
+2019/08/06 16:00:44 [alert] 12914#0: lua_code_cache is off; this will hurt performance in /home/nratel/openresty-work/game/conf/nginx-dev.conf:16
+2019/08/06 16:00:48 [error] 14543#0: *95 lua entry thread aborted: runtime error: /home/nratel/openresty-work/game/./app/main.lua:53: module 'serpent' not found:
+	no field package.preload['serpent']
+	no file '/home/nratel/openresty-work/game//app/lualib/serpent.lua'
+	no file '/usr/local/openresty/site/lualib/serpent.ljbc'
+	no file '/usr/local/openresty/site/lualib/serpent/init.ljbc'
+	no file '/usr/local/openresty/lualib/serpent.ljbc'
+	no file '/usr/local/openresty/lualib/serpent/init.ljbc'
+	no file '/usr/local/openresty/site/lualib/serpent.lua'
+	no file '/usr/local/openresty/site/lualib/serpent/init.lua'
+	no file '/usr/local/openresty/lualib/serpent.lua'
+	no file '/usr/local/openresty/lualib/serpent/init.lua'
+	no file './serpent.lua'
+	no file '/usr/local/openresty/luajit/share/luajit-2.1.0-beta3/serpent.lua'
+	no file '/usr/local/share/lua/5.1/serpent.lua'
+	no file '/usr/local/share/lua/5.1/serpent/init.lua'
+	no file '/usr/local/openresty/luajit/share/lua/5.1/serpent.lua'
+	no file '/usr/local/openresty/luajit/share/lua/5.1/serpent/init.lua'
+	no file '/home/nratel/openresty-work/game//app/clib/serpent.so'
+	no file '/usr/local/openresty/site/lualib/serpent.so'
+	no file '/usr/local/openresty/lualib/serpent.so'
+	no file './serpent.so'
+	no file '/usr/local/lib/lua/5.1/serpent.so'
+	no file '/usr/local/openresty/luajit/lib/lua/5.1/serpent.so'
+	no file '/usr/local/lib/lua/5.1/loadall.so'
+stack traceback:
+coroutine 0:
+	[C]: in function 'require'
+	/home/nratel/openresty-work/game/./app/main.lua:53: in main chunk, client: 127.0.0.1, server: game-dev, request: "POST /game HTTP/1.1", host: "127.0.0.1:81"
+2019/08/06 16:00:48 [error] 14543#0: *93 attempt to set status 500 via ngx.exit after sending out the response status 200, client: 1.119.163.126, server: game-dev, request: "GET /test HTTP/1.1", host: "www.nratel.com:81"
