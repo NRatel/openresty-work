@@ -2,8 +2,8 @@ local http = require "resty.http"
 local httpc = http.new()
 local res, err = httpc:request_uri("http://127.0.0.1:80/game", {
     method = "POST",
-    args = { a = 111, b = 'bbb' },
-    body = { c = 222, d = 'ddd' },
+    args = ngx.encode_args({ a = 111, b = 'bbb' }),
+    body = ngx.encode_args({ c = 222, d = 'ddd' }),
     -- headers = {
     --     ["Content-Type"] = "application/x-www-form-urlencoded",
     -- },
