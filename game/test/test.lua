@@ -11,12 +11,8 @@ local res, err = httpc:request_uri("http://127.0.0.1:81/game", {
     keepalive_pool = 10
 })
 
-if (res) then
-    ngx.print("res.status: ", res.status)
-
-    if 200 ~= res.status then
-        ngx.exit(res.status)
-    end
-
-    ngx.print("res.body: ", res.body)
+if res.status == ngx.HTTP_OK then
+    ngx.say(res.body)
+else
+    ngx.exit(res.status)
 end

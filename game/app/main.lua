@@ -46,9 +46,9 @@ local data = {
 
 -- encode lua table data into binary format in lua string and return
 local bytes = assert(pb.encode("Person", data))
-print(pb.tohex(bytes))
+ngx.say(pb.tohex(bytes))
 
 -- and decode the binary data back into lua table
 local data2 = assert(pb.decode("Person", bytes))
-print(serpent.block(data2))
+ngx.say(serpent.block(data2))
  
