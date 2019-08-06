@@ -14,8 +14,6 @@ end
 
 --POST body
 
-
-
 -----------------------------------------------------------------------
 
 local pb = require "pb"
@@ -46,9 +44,14 @@ local data = {
 
 -- encode lua table data into binary format in lua string and return
 local bytes = assert(pb.encode("Person", data))
-print(pb.tohex(bytes))
+print(bytes)
+ngx.print(bytes)
+ngx.say(bytes)
 
 -- and decode the binary data back into lua table
 local data2 = assert(pb.decode("Person", bytes))
-print(require "serpent".block(data2))
+print(data2)
+ngx.print(data2)
+ngx.say(data2)
+
  
