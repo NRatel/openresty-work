@@ -1,3 +1,5 @@
+local serpent = require "serpent"
+
 
 --GET arg
 local getArgs = ngx.req.get_uri_args()
@@ -44,14 +46,9 @@ local data = {
 
 -- encode lua table data into binary format in lua string and return
 local bytes = assert(pb.encode("Person", data))
-print(bytes)
-ngx.print(bytes)
-ngx.say(bytes)
+print(pb.tohex(bytes))
 
 -- and decode the binary data back into lua table
 local data2 = assert(pb.decode("Person", bytes))
-print(data2)
-ngx.print(data2)
-ngx.say(data2)
-
+print(serpent.block(data2))
  
