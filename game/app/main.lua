@@ -22,7 +22,7 @@ local pb = require "pb"
 local protoc = require "protoc"
 
 
-local file = io.open("./protos/test.proto", "r")
+local file = io.open("../protos/test.proto", "r")
 local str = file:read("*a")
 file:close()
 
