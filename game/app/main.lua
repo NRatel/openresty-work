@@ -53,7 +53,7 @@ for i, path in ipairs(files) do
         return 
     end
     -- ... and options
-    p.include_imports = false
+    p.include_imports = true
     p:load(str);
 end
 
