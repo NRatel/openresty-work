@@ -16,11 +16,8 @@ end
 
 --POST body
 -----------------------------------------------------------------------
-local pb = require "pb"
-local protoc = require "protoc"
 
-
-local file, msg = io.open("../protos/test.proto", "r")
+local file, msg = io.open("./test.txt", "r")
 if file ~= nil then
     local str = file:read("*a")
     file:close()
@@ -28,7 +25,3 @@ if file ~= nil then
 else
    ngx.say("err, " .. msg)
 end
-
-
-
--- encode lua table data into binary format in lua string and return-- local bytes = assert(pb.encode("Person", data))-- ngx.say(pb.tohex(bytes))-- -- and decode the binary data back into lua table-- local data2 = assert(pb.decode("Person", bytes))-- ngx.say(serpent.block(data2))
