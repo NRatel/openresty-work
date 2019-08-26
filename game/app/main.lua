@@ -17,7 +17,10 @@ end
 --POST body
 -----------------------------------------------------------------------
 
-local file, msg = io.open("${prefix}/app/test.txt", "r")
+-- local file, msg = io.open("${prefix}/app/test.txt", "r")
+
+local file, msg = io.open("/home/nratel/openresty-work/game/app/test.txt", "r")
+
 if file ~= nil then
     local str = file:read("*a")
     file:close()
