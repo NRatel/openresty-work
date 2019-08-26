@@ -17,7 +17,7 @@ end
 --POST body
 -----------------------------------------------------------------------
 
-local file, msg = io.open("./test.txt", "r")
+local file, msg = io.open("test.txt", "r")
 if file ~= nil then
     local str = file:read("*a")
     file:close()
