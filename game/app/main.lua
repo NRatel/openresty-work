@@ -31,8 +31,8 @@ local function readFile(path)
 end
 
 local files = {
-    "protos/entity/account.proto",
-    "protos/msg/account.proto"
+    "app/protos/entity/account.proto",
+    "app/protos/msg/account.proto"
 }
 
 for i, path in ipairs(files) do
