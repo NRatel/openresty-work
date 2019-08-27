@@ -1,10 +1,11 @@
 syntax = "proto3";
 package msg;
 
-import "entity/account.proto";
+// import "entity/account.proto";
+import "test.proto";
 
 message Login_C {
-    Account account = 1;
+    TData tdata = 1;
 }
 
 message Login_S {
