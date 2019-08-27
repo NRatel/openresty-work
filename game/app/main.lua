@@ -32,8 +32,10 @@ end
 
 local files = {
     "app/protos/entity/account.proto",
-    -- "app/protos/msg/account.proto"
+    "app/protos/msg/account.proto"
 }
+
+local p = protoc.new()
 
 for i, path in ipairs(files) do
     local str, msg = readFile(path)
@@ -42,7 +44,6 @@ for i, path in ipairs(files) do
         return
     end
 
-    local p = protoc.new()
     -- set some hooks
     p.unknown_module = function(self, module_name)
         ngx.log(ngx.ERR, "未知的模块: ", module_name)
@@ -58,11 +59,14 @@ for i, path in ipairs(files) do
 end
 
 local data = {
-    username = "NRatel",
-    password = "000000"
+    account = {
+        username = "NRatel",
+        password = "000000"
+    }
 }
-local bytes = assert(pb.encode("entity.Account", data))
+
+local bytes = assert(pb.encode("msg.Login_C", data))
 ngx.say(pb.tohex(bytes))
 ngx.say("---------------------")
-local data2 = assert(pb.decode("entity.Account", bytes))
+local data2 = assert(pb.decode("msg.Login_C", bytes))
 ngx.say(serpent.block(data2))
