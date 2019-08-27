@@ -31,7 +31,8 @@ local function readFile(path)
 end
 
 local files = {
-    "app/protos/entity/account.proto",
+    -- "app/protos/entity/account.proto",
+    "app/protos/msg/test.proto",
     "app/protos/msg/login.proto"
 }
 
@@ -59,7 +60,7 @@ for i, path in ipairs(files) do
 end
 
 local data = {
-    account = {
+    tdata = {
         username = "NRatel",
         password = "000000"
     }
