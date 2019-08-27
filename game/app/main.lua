@@ -19,7 +19,7 @@ end
 -----------------------------------------------------------------------
 local prefix = "/home/nratel/openresty-work/game/app/"
 
-ngx.say(ngx.config.prefix)
+ngx.say(ngx.config.prefix())
 
 -- local function readFile(path)
 --     local file, msg = io.open(prefix .. path, "r")
