@@ -14,3 +14,4 @@
 2019/08/05 20:24:33 [emerg] 12780#0: still could not bind()
 2019/08/05 20:25:19 [alert] 12845#0: lua_code_cache is off; this will hurt performance in /home/nratel/openresty-work/web/conf/nginx-dev.conf:16
 2019/08/05 20:45:08 [alert] 12972#0: lua_code_cache is off; this will hurt performance in /home/nratel/openresty-work/web/conf/nginx-dev.conf:16
+2019/08/26 17:23:56 [alert] 12292#0: lua_code_cache is off; this will hurt performance in /home/nratel/openresty-work/web/conf/nginx-dev.conf:16
