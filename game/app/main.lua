@@ -32,7 +32,7 @@ end
 
 local files = {
     "app/protos/entity/account.proto",
-    "app/protos/msg/account.proto"
+    "app/protos/msg/login.proto"
 }
 
 local p = protoc.new()

@@ -1,7 +1,7 @@
 syntax = "proto3";
 package msg;
 
-import "/home/nratel/openresty-work/game/app/protos/entity/account.proto";
+import "entity/account.proto";
 
 message Login_C {
     Account account = 1;
