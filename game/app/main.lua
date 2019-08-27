@@ -32,7 +32,7 @@ end
 
 local files = {
     "app/protos/entity/account.proto",
-    "app/protos/msg/account.proto"
+    -- "app/protos/msg/account.proto"
 }
 
 for i, path in ipairs(files) do
@@ -58,18 +58,11 @@ for i, path in ipairs(files) do
 end
 
 local data = {
-    account = {
-        username = "NRatel",
-        password = "000000"
-    }
+    username = "NRatel",
+    password = "000000"
 }
--- encode lua table data into binary format in lua string and return
-local bytes = assert(pb.encode("msg.Login_C", data))
+local bytes = assert(pb.encode("entity.Account", data))
 ngx.say(pb.tohex(bytes))
 ngx.say("---------------------")
--- local bytes = assert(pb.encode("Person", data))
--- ngx.say(pb.tohex(bytes))
--- and decode the binary data back into lua table
-local data2 = assert(pb.decode("msg.Login_C", bytes))
+local data2 = assert(pb.decode("entity.Account", bytes))
 ngx.say(serpent.block(data2))
--- -- and decode the binary data back into lua table-- local data2 = assert(pb.decode("Person", bytes))-- ngx.say(serpent.block(data2))-- local file, msg = io.open("${prefix}/app/test.txt", "r")
