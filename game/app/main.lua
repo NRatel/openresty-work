@@ -19,7 +19,6 @@ end
 -----------------------------------------------------------------------
 local prefix = ngx.config.prefix()  --"/home/nratel/openresty-work/game/"
 
-
 local loadByProtos = function()
     local function readFile(path)
         local file, msg = io.open(prefix .. path, "r")
@@ -50,6 +49,9 @@ local loadByProtos = function()
     -- ... and options
     p.include_imports = true
 
+    --指定 import查找路径
+    p.addpath(prefix .. "app/protos")
+
     for i, path in ipairs(files) do
         local str, msg = readFile(path)
         if (not str) then
@@ -61,7 +63,7 @@ local loadByProtos = function()
     end
 end
 
-local loadByPbs = function()
+local loadByBytes = function()
     local function readFile(path)
         local file, msg = io.open(prefix .. path, "rb")
         if file ~= nil then
@@ -83,8 +85,8 @@ local loadByPbs = function()
     pb.load(bytes)
 end
 
---loadByProtos();
-loadByPbs();
+loadByProtos();
+-- loadByBytes();
 
 local data = {
     account = {
