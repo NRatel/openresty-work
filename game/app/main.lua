@@ -77,3 +77,5 @@ end
 local loadByPbs = function ()
     
 end
+
+loadByProtos();
