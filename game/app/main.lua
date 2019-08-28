@@ -21,7 +21,7 @@ end
 local prefix = ngx.config.prefix()  --"/home/nratel/openresty-work/game/"
 
 local pbLoader = require("app.protobuf.loader");
-pbLoader:loadByBytes(prefix .. "app/protobuf/proto.bytes");
+pbLoader.loadByBytes(prefix .. "app/protobuf/proto.bytes");
 
 local data = {
     account = {
