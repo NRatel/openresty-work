@@ -32,6 +32,5 @@ local data = {
 
 local bytes = assert(pb.encode("msg.Login_C", data))
 ngx.say(pb.tohex(bytes))
-ngx.say("---------------------")
 local data2 = assert(pb.decode("msg.Login_C", bytes))
 ngx.say(serpent.block(data2))
