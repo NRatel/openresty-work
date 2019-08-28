@@ -85,8 +85,8 @@ local loadByBytes = function()
     pb.load(bytes)
 end
 
-loadByProtos();
--- loadByBytes();
+-- loadByProtos();
+loadByBytes();
 
 local data = {
     account = {
