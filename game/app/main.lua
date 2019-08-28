@@ -45,32 +45,34 @@ for i, path in ipairs(files) do
         ngx.log(ngx.ERR, "读取文件失败: ", msg)
         return
     end
-    allStr = allStr .. "\r\n" .. str;
+    allStr = allStr .. "\r\n" .. str
 end
 
--- set some hooks
-p.unknown_module = function(self, module_name)
-    ngx.log(ngx.ERR, "未知的模块: ", module_name)
-    return
-end
-p.unknown_type = function(self, type_name)
-    ngx.log(ngx.ERR, "未知的类型: ", type_name)
-    return
-end
+ngx.say(allStr)
 
--- ... and options
-p.include_imports = true
-p:load(allStr)
+-- -- set some hooks
+-- p.unknown_module = function(self, module_name)
+--     ngx.log(ngx.ERR, "未知的模块: ", module_name)
+--     return
+-- end
+-- p.unknown_type = function(self, type_name)
+--     ngx.log(ngx.ERR, "未知的类型: ", type_name)
+--     return
+-- end
 
-local data = {
-    tdata = {
-        username = "NRatel",
-        password = "000000"
-    }
-}
+-- -- ... and options
+-- p.include_imports = true
+-- p:load(allStr)
 
-local bytes = assert(pb.encode("msg.Login_C", data))
-ngx.say(pb.tohex(bytes))
-ngx.say("---------------------")
-local data2 = assert(pb.decode("msg.Login_C", bytes))
-ngx.say(serpent.block(data2))
+-- local data = {
+--     tdata = {
+--         username = "NRatel",
+--         password = "000000"
+--     }
+-- }
+
+-- local bytes = assert(pb.encode("msg.Login_C", data))
+-- ngx.say(pb.tohex(bytes))
+-- ngx.say("---------------------")
+-- local data2 = assert(pb.decode("msg.Login_C", bytes))
+-- ngx.say(serpent.block(data2))
