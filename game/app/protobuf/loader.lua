@@ -1,7 +1,10 @@
+local pb = require "pb"
+local protoc = require "protoc"
+
 local loader = {}
 
 --未调通
-function loader:loadByProtos(files)
+function loader.loadByProtos(files)
     local function readFile(path)
         local file, msg = io.open(path, "r")
         if file ~= nil then
@@ -41,7 +44,7 @@ function loader:loadByProtos(files)
 end
 
 --已通
-function loader:loadByBytes(file)
+function loader.loadByBytes(file)
     local file, msg = io.open(file, "rb")
     if file ~= nil then
         local bytes = file:read("*a")
