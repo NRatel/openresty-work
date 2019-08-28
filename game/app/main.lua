@@ -36,6 +36,7 @@ local files = {
     "app/protos/msg/login.proto"
 }
 
+local allStr = ""
 local p = protoc.new()
 
 for i, path in ipairs(files) do
@@ -44,20 +45,22 @@ for i, path in ipairs(files) do
         ngx.log(ngx.ERR, "读取文件失败: ", msg)
         return
     end
-
-    -- set some hooks
-    p.unknown_module = function(self, module_name)
-        ngx.log(ngx.ERR, "未知的模块: ", module_name)
-        return
-    end
-    p.unknown_type = function(self, type_name)
-        ngx.log(ngx.ERR, "未知的类型: ", type_name)
-        return
-    end
-    -- ... and options
-    p.include_imports = true
-    p:load(str);
+    allStr = allStr .. "\r\n" .. str;
 end
+
+-- set some hooks
+p.unknown_module = function(self, module_name)
+    ngx.log(ngx.ERR, "未知的模块: ", module_name)
+    return
+end
+p.unknown_type = function(self, type_name)
+    ngx.log(ngx.ERR, "未知的类型: ", type_name)
+    return
+end
+
+-- ... and options
+p.include_imports = true
+p:load(allStr)
 
 local data = {
     tdata = {
