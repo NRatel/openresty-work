@@ -59,23 +59,42 @@ local loadByProtos = function()
 
         p:load(str)
     end
+end
 
-    local data = {
-        tdata = {
-            username = "NRatel",
-            password = "000000"
-        }
+local loadByPbs = function()
+    local function readFile(path)
+        local file, msg = io.open(prefix .. path, "rb")
+        if file ~= nil then
+            local bytes = file:read("*a")
+            file:close()
+            return bytes, nil
+        else
+            return nil, msg
+        end
+    end
+
+    local file = "app/pb/pb.pb"
+    local bytes, msg = readFile(file);
+    if (not bytes) then
+        ngx.log(ngx.ERR, "读取文件失败: ", msg)
+        return
+    end
+
+    pb.load(bytes)
+end
+
+--loadByProtos();
+loadByPbs();
+
+local data = {
+    tdata = {
+        username = "NRatel",
+        password = "000000"
     }
+}
 
-    local bytes = assert(pb.encode("msg.Login_C", data))
-    ngx.say(pb.tohex(bytes))
-    ngx.say("---------------------")
-    local data2 = assert(pb.decode("msg.Login_C", bytes))
-    ngx.say(serpent.block(data2))
-end
-
-local loadByPbs = function ()
-    
-end
-
-loadByProtos();
+local bytes = assert(pb.encode("msg.Login_C", data))
+ngx.say(pb.tohex(bytes))
+ngx.say("---------------------")
+local data2 = assert(pb.decode("msg.Login_C", bytes))
+ngx.say(serpent.block(data2))
