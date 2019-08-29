@@ -1,6 +1,5 @@
 local serpent = require "serpent"
 local pb = require "pb"
-local protoc = require "protoc"
 
 --GET arg
 local getArgs = ngx.req.get_uri_args()
@@ -13,15 +12,14 @@ ngx.req.read_body() -- 解析 body 参数之前一定要先读取 body
 local postArgs = ngx.req.get_post_args()
 for k, v in pairs(getArgs) do
     ngx.say("[POST ] key:", k, " v:", v)
-end
+end  
 
 --POST body
 -----------------------------------------------------------------------
 
+--注册pb
 local prefix = ngx.config.prefix()  --"/home/nratel/openresty-work/game/"
-
-local pbLoader = require("app.protobuf.loader");
-pbLoader.loadByBytes(prefix .. "app/protobuf/proto.bytes");
+require("app.protobuf.register").register(prefix .. "app/protobuf/proto.pb");
 
 local data = {
     account = {

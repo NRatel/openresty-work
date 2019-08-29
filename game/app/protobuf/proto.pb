@@ -4,9 +4,10 @@ i
 Account
 username (	Rusername
 password (	Rpasswordbproto3
-ç
+£
 msg/login.protomsgentity/account.proto"4
 Login_C)
-account (2.entity.AccountRaccount"!
+account (2.entity.AccountRaccount"7
 Login_S
-result (Rresultbproto3
+result (Rresult
+token (	Rtokenbproto3
