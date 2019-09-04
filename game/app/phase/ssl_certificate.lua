@@ -13,7 +13,7 @@
 --可以使用这两个Lua模块提供的Lua API来操作SSL证书链和当前已被启动的SSL连接的私钥。
 --这个Lua处理程序只在Nginx必须启动一个完整的SSL握手时运行。
 --用户Lua代码中的未捕获异常会立即中止当前SSL会话，所以，使用 ngx.exit 进行错误代码退出调用，类似于 ngx.ERROR。
---此Lua代码执行上下文支持挂起，所以，在此上下文中启用了可能挂起的 Lua API (如： cosockets, sleeping, "light threads")
+--此Lua代码执行上下文支持让出（yield），所以，在此上下文中启用了可能让出（yield）的 Lua API (如： cosockets, sleeping, "light threads")
 --但是，请注意，您仍然需要配置ssl_certificate和ssl_certificate_key指令，即使您根本不使用这个静态证书和私钥。这是因为NGINX核心需要它们的外观，否则你在启动NGINX时会看到以下错误: nginx: [emerg] no ssl configured for the server
 
 --当给定一个相对路径 如 foo/bar.lua 时，它们将被转换为绝对路径(拼上启动Nginx服务器时由-p PATH 传入的前缀路径)。

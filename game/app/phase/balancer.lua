@@ -8,7 +8,7 @@
 --Lua负载均衡器可以完全忽略在 upstream {} 块中定义的服务器列表，并通过 lua-rest-core 库中的 ngx.balancer 模块从一个完全动态的服务器列表中选择peer(甚至根据每个请求进行更改)。
 --当 Nginx upstream 机制在 proxy_next_upstream 指令等指令指定的条件下重试请求时，这个指令注册的Lua代码处理程序可能会在单个 downstream 请求中被多次调用。
 
---这个Lua代码执行上下文不支持挂起，因此可能挂起的 Lua API(如： cosockets, sleeping, "light threads")在这个上下文中被禁用。 
+--这个Lua代码执行上下文不支持让出（yield），因此可能让出（yield）的 Lua API(如： cosockets, sleeping, "light threads")在这个上下文中被禁用。 
 --通常可以通过在较早的阶段处理程序(如access_by_lua*)中执行此类操作，并通过 ngx.ctx表 将结果传递到该上下文中，来绕过此限制。
 
 --当给定一个相对路径 如 foo/bar.lua 时，它们将被转换为绝对路径(拼上启动Nginx服务器时由-p PATH 传入的前缀路径)。

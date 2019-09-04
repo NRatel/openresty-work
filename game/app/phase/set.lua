@@ -8,7 +8,7 @@
 --当Nginx事件循环在代码执行过程中被阻塞时，这个指令被设计用来执行短的、快速运行的代码块。因此，应该避免耗时的代码队列。
 
 --这个指令是通过在标准 ngx_http_rewrite_module的命令列表中注入定制命令来实现的。
---因为ngx_http_rewrite_module的命令不支持非阻塞I/O，所以，要求挂起当前Lua“轻线程”的 Lua API不能在这个指令中工作。
+--因为ngx_http_rewrite_module的命令不支持非阻塞I/O，所以，要求让出（yield）当前Lua“轻线程”的 Lua API不能在这个指令中工作。
 --至少目前禁用了以下API
 --Output API functions (e.g., ngx.say and ngx.send_headers)
 --Control API functions (e.g., ngx.exit)
