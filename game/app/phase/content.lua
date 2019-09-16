@@ -12,7 +12,7 @@
 
 --------------------------------------------------------------------------
 
-require("game.app.test.request_arg")
+require("app.test.request_arg")
 
 require("app.test.pb")
 
