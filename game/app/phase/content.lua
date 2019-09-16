@@ -14,9 +14,9 @@
 
 require("app.test.request_arg")
 
-require("app.test.pb")
+-- require("app.test.pb")
 
-require("app.test.mysql")
+-- require("app.test.mysql")
 
-require("app.test.redis")
+-- require("app.test.redis")
 
