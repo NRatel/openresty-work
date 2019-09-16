@@ -15,22 +15,22 @@ db:set_timeout(1000) -- 1 sec
 --              database = "ngx_test",
 --              user = "ngx_test",
 --              password = "ngx_test" }
-local ok, err, errcode, sqlstate = db:connect {
-    host = "127.0.0.1",
-    port = 3306,
-    database = "test",
-    user = "test",
-    password = "test",
-    charset = "utf8",
-    max_packet_size = 1024 * 1024,
-}
+-- local ok, err, errcode, sqlstate = db:connect {
+--     host = "127.0.0.1",
+--     port = 3306,
+--     database = "test",
+--     user = "test",
+--     password = "test",
+--     charset = "utf8",
+--     max_packet_size = 1024 * 1024,
+-- }
 
-if not ok then
-    ngx.say("failed to connect: ", err, ": ", errcode, " ", sqlstate)
-    return
-end
+-- if not ok then
+--     ngx.say("failed to connect: ", err, ": ", errcode, " ", sqlstate)
+--     return
+-- end
 
-ngx.say("connected to mysql.")
+-- ngx.say("connected to mysql.")
 
 -- local res, err, errcode, sqlstate = db:query("drop table if exists cats")
 -- if not res then
