@@ -5,34 +5,32 @@ if not db then
     return
 end
 
-ngx.say("0000000000000000+++0000000000000000")
+db:set_timeout(1000) -- 1 sec
 
--- db:set_timeout(1000) -- 1 sec
+-- or connect to a unix domain socket file listened
+-- by a mysql server:
+--     local ok, err, errcode, sqlstate =
+--           db:connect{
+--              path = "/path/to/mysql.sock",
+--              database = "ngx_test",
+--              user = "ngx_test",
+--              password = "ngx_test" }
+local ok, err, errcode, sqlstate = db:connect {
+    host = "127.0.0.1",
+    port = 3306,
+    database = "test",
+    user = "test",
+    password = "test",
+    charset = "utf8",
+    max_packet_size = 1024 * 1024,
+}
 
--- -- or connect to a unix domain socket file listened
--- -- by a mysql server:
--- --     local ok, err, errcode, sqlstate =
--- --           db:connect{
--- --              path = "/path/to/mysql.sock",
--- --              database = "ngx_test",
--- --              user = "ngx_test",
--- --              password = "ngx_test" }
--- local ok, err, errcode, sqlstate = db:connect {
---     host = "127.0.0.1",
---     port = 3306,
---     database = "test",
---     user = "test",
---     password = "test",
---     charset = "utf8",
---     max_packet_size = 1024 * 1024,
--- }
+if not ok then
+    ngx.say("failed to connect: ", err, ": ", errcode, " ", sqlstate)
+    return
+end
 
--- if not ok then
---     ngx.say("failed to connect: ", err, ": ", errcode, " ", sqlstate)
---     return
--- end
-
--- ngx.say("connected to mysql.")
+ngx.say("connected to mysql.")
 
 -- local res, err, errcode, sqlstate = db:query("drop table if exists cats")
 -- if not res then
@@ -79,9 +77,9 @@ ngx.say("0000000000000000+++0000000000000000")
 --     return
 -- end
 
--- or just close the connection right away:
--- local ok, err = db:close()
--- if not ok then
---     ngx.say("failed to close: ", err)
---     return
--- end
+-- -- or just close the connection right away:
+-- -- local ok, err = db:close()
+-- -- if not ok then
+-- --     ngx.say("failed to close: ", err)
+-- --     return
+-- -- end
