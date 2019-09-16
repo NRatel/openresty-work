@@ -18,5 +18,5 @@ require("app.test.pb")
 
 require("app.test.mysql")
 
-require("game.app.test.redis")
+require("app.test.redis")
 
