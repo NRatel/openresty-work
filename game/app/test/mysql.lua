@@ -83,3 +83,5 @@ ngx.say("connected to mysql.")
 -- --     ngx.say("failed to close: ", err)
 -- --     return
 -- -- end
+
+return 0;
