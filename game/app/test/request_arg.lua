@@ -1,6 +1,8 @@
 local _M = {}
 
 function _M:test()
+    ngx.say("-------------------- test request_arg --------------------")
+    
     --GET arg
     local getArgs = ngx.req.get_uri_args()
     for k, v in pairs(getArgs) do

@@ -4,6 +4,8 @@ local cjson = require "cjson"
 local _M = {}
 
 function _M:test()
+    ngx.say("-------------------- test mysql --------------------")
+
     local db, err = mysql:new()
     if not db then
         ngx.say("failed to instantiate mysql: ", err)

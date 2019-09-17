@@ -4,6 +4,8 @@ local pb = require "pb"
 local _M = {}
 
 function _M:test()
+    ngx.say("-------------------- test pb --------------------")
+    
     --注册pb
     local prefix = ngx.config.prefix()  --"/home/nratel/openresty-work/game/"
     require("app.protobuf.register").register(prefix .. "app/protobuf/proto.pb");

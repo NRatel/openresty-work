@@ -3,6 +3,8 @@ local redis = require "resty.redis"
 local _M = {}
 
 function _M:test()
+    ngx.say("-------------------- test redis --------------------")
+
     local red = redis:new()
     red:set_timeouts(1000, 1000, 1000) -- 1 sec
 
