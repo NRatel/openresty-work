@@ -16,7 +16,8 @@
 
 -- require("app.test.pb")
 
-require("app.test.mysql")
+local tmysql = require("app.test.mysql")
+tmysql:test();
 
 -- require("app.test.redis")
 
