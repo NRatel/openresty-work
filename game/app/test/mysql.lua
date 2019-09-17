@@ -1,7 +1,9 @@
+local mysql = require "resty.mysql"
+local cjson = require "cjson"
+
 local _M = {}
 
 function _M:test()
-    local mysql = require "resty.mysql"
     local db, err = mysql:new()
     if not db then
         ngx.say("failed to instantiate mysql: ", err)
@@ -69,7 +71,6 @@ function _M:test()
         return
     end
 
-    local cjson = require "cjson"
     ngx.say("result: ", cjson.encode(res))
 
     -- put it into the connection pool of size 100,
