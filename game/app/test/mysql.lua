@@ -32,56 +32,54 @@ end
 
 ngx.say("connected to mysql.")
 
--- local res, err, errcode, sqlstate = db:query("drop table if exists cats")
--- if not res then
---     ngx.say("bad result: ", err, ": ", errcode, ": ", sqlstate, ".")
---     return
--- end
+local res, err, errcode, sqlstate = db:query("drop table if exists cats")
+if not res then
+    ngx.say("bad result: ", err, ": ", errcode, ": ", sqlstate, ".")
+    return
+end
 
--- res, err, errcode, sqlstate = db:query("create table cats "
--- .. "(id serial primary key, "
--- .. "name varchar(5))")
--- if not res then
---     ngx.say("bad result: ", err, ": ", errcode, ": ", sqlstate, ".")
---     return
--- end
+res, err, errcode, sqlstate = db:query("create table cats "
+.. "(id serial primary key, "
+.. "name varchar(5))")
+if not res then
+    ngx.say("bad result: ", err, ": ", errcode, ": ", sqlstate, ".")
+    return
+end
 
--- ngx.say("table cats created.")
+ngx.say("table cats created.")
 
--- res, err, errcode, sqlstate = db:query("insert into cats (name) "
--- .. "values ('Bob'),(''),(null)")
--- if not res then
---     ngx.say("bad result: ", err, ": ", errcode, ": ", sqlstate, ".")
---     return
--- end
+res, err, errcode, sqlstate = db:query("insert into cats (name) "
+.. "values ('Bob'),(''),(null)")
+if not res then
+    ngx.say("bad result: ", err, ": ", errcode, ": ", sqlstate, ".")
+    return
+end
 
--- ngx.say(res.affected_rows, " rows inserted into table cats ",
--- "(last insert id: ", res.insert_id, ")")
+ngx.say(res.affected_rows, " rows inserted into table cats ",
+"(last insert id: ", res.insert_id, ")")
 
--- -- run a select query, expected about 10 rows in
--- -- the result set:
--- res, err, errcode, sqlstate = db:query("select * from cats order by id asc", 10)
--- if not res then
---     ngx.say("bad result: ", err, ": ", errcode, ": ", sqlstate, ".")
---     return
--- end
+-- run a select query, expected about 10 rows in
+-- the result set:
+res, err, errcode, sqlstate = db:query("select * from cats order by id asc", 10)
+if not res then
+    ngx.say("bad result: ", err, ": ", errcode, ": ", sqlstate, ".")
+    return
+end
 
--- local cjson = require "cjson"
--- ngx.say("result: ", cjson.encode(res))
+local cjson = require "cjson"
+ngx.say("result: ", cjson.encode(res))
 
--- -- put it into the connection pool of size 100,
--- -- with 10 seconds max idle timeout
--- local ok, err = db:set_keepalive(10000, 100)
+-- put it into the connection pool of size 100,
+-- with 10 seconds max idle timeout
+local ok, err = db:set_keepalive(10000, 100)
+if not ok then
+    ngx.say("failed to set keepalive: ", err)
+    return
+end
+
+-- or just close the connection right away:
+-- local ok, err = db:close()
 -- if not ok then
---     ngx.say("failed to set keepalive: ", err)
+--     ngx.say("failed to close: ", err)
 --     return
 -- end
-
--- -- or just close the connection right away:
--- -- local ok, err = db:close()
--- -- if not ok then
--- --     ngx.say("failed to close: ", err)
--- --     return
--- -- end
-
-return 0;
