@@ -12,7 +12,7 @@
 
 --------------------------------------------------------------------------
 
-require("app.test.request_arg"):test()
-require("app.test.pb"):test()
-require("app.test.mysql"):test()
+--require("app.test.request_arg"):test()
+--require("app.test.pb"):test()
+--require("app.test.mysql"):test()
 -- require("app.test.redis"):test()

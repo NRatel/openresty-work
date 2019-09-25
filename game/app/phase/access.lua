@@ -16,3 +16,19 @@
 --当给定一个相对路径 如 foo/bar.lua 时，它们将被转换为绝对路径(拼上启动Nginx服务器时由-p PATH 传入的前缀路径)。
 --当打开Lua代码缓存时(默认情况下)，用户代码在第一个请求时加载一次并缓存，每次修改Lua源文件时都必须重新加载Nginx配置。
 --可以在开发期间暂时禁用Lua代码缓存， 以避免每次都要重新加载Nginx配置。可在 nginx.conf 中关闭 lua_code_cache。
+
+-------------------------------------------------------------------------------------------
+
+--完成密文协议解码
+
+--GET arg
+local getArgs = ngx.req.get_uri_args()
+--POST arg、data  -- 解析 body 参数之前一定要先读取 body
+ngx.req.read_body() 
+local postArgs = ngx.req.get_post_args()
+local postData = ngx.req.get_body_data()
+
+ngx.say("------------------");
+ngx.say(postData);
+ngx.say("------------------");
+
