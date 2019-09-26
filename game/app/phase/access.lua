@@ -17,31 +17,33 @@
 --当打开Lua代码缓存时(默认情况下)，用户代码在第一个请求时加载一次并缓存，每次修改Lua源文件时都必须重新加载Nginx配置。
 --可以在开发期间暂时禁用Lua代码缓存， 以避免每次都要重新加载Nginx配置。可在 nginx.conf 中关闭 lua_code_cache。
 
--------------------------------------------------------------------------------------------
-
 local serpent = require "serpent"
+-------------------------------------------------------------------------------------------
+--/*解析参数*/
 
 --完成密文协议解码
 local headers = ngx.req.get_headers()
-ngx.say("---------headers---------")
-ngx.say(serpent.block(headers))
-ngx.say("-------------------------")
+-- ngx.say("---------headers---------")
+-- ngx.say(serpent.block(headers))
+-- ngx.say("-------------------------")
 
 --GET args
 local getArgs = ngx.req.get_uri_args()
-ngx.say("---------GET args---------")
-ngx.say(serpent.block(getArgs))
-ngx.say("-------------------------")
+-- ngx.say("---------GET args---------")
+-- ngx.say(serpent.block(getArgs))
+-- ngx.say("-------------------------")
 
 --POST args、data  -- 解析 body 参数之前一定要先读取 body
-ngx.req.read_body() 
-local postArgs = ngx.req.get_post_args()
-local postData = ngx.req.get_body_data()
-ngx.say("---------POST args---------")
-ngx.say(serpent.block(postArgs))
-ngx.say("-------------------------")
+ngx.req.read_body()
+--它总是返回一个 lua table
+-- local postArgs = ngx.req.get_post_args()
+-- ngx.say(serpent.block(postArgs))
 
-ngx.say("---------POST data---------")
-ngx.say(serpent.block(postData))
-ngx.say("-------------------------")
+--它总是返回一个 lua string
+local postData = ngx.req.get_body_data()
+ngx.say(postData)
+
+-------------------------------------------------------------------------------------------
+
+
 
