@@ -19,16 +19,29 @@
 
 -------------------------------------------------------------------------------------------
 
---完成密文协议解码
+local serpent = require "serpent"
 
---GET arg
+--完成密文协议解码
+local headers = ngx.req.get_headers()
+ngx.say("---------headers---------")
+ngx.say(serpent.block(headers))
+ngx.say("-------------------------")
+
+--GET args
 local getArgs = ngx.req.get_uri_args()
---POST arg、data  -- 解析 body 参数之前一定要先读取 body
+ngx.say("---------GET args---------")
+ngx.say(serpent.block(headers))
+ngx.say("-------------------------")
+
+--POST args、data  -- 解析 body 参数之前一定要先读取 body
 ngx.req.read_body() 
 local postArgs = ngx.req.get_post_args()
 local postData = ngx.req.get_body_data()
+ngx.say("---------POST args---------")
+ngx.say(serpent.block(postArgs))
+ngx.say("-------------------------")
 
-ngx.say("------------------");
-ngx.say(postData);
-ngx.say("------------------");
+ngx.say("---------POST data---------")
+ngx.say(serpent.block(postData))
+ngx.say("-------------------------")
 
