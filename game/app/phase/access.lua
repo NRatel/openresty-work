@@ -18,8 +18,9 @@
 --可以在开发期间暂时禁用Lua代码缓存， 以避免每次都要重新加载Nginx配置。可在 nginx.conf 中关闭 lua_code_cache。
 
 local serpent = require "serpent"
+local cjson = require "cjson"
 -------------------------------------------------------------------------------------------
---/*解析参数*/
+--/*解析参数*/--
 
 --完成密文协议解码
 local headers = ngx.req.get_headers()
@@ -43,7 +44,13 @@ ngx.req.read_body()
 local postData = ngx.req.get_body_data()
 ngx.say(postData)
 
--------------------------------------------------------------------------------------------
+local commonRequest = cjson.decode(postData)
+local msgName = commonRequest.msgName
+local msg = cjson.decode(commonRequest.msg)
 
+ngx.say(msgName)
+ngx.say(msg)
+-------------------------------------------------------------------------------------------
+--/*解析参数*/--
 
 
