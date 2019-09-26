@@ -40,11 +40,7 @@ local postData = ngx.req.get_body_data()
 ngx.say("---------POST args---------")
 -- ngx.say(serpent.block(postArgs))
 for key, val in pairs(postArgs) do
-    if type(val) == "table" then
-        ngx.say(key, ": ", table.concat(val, ", "))
-    else
-        ngx.say(key, ": ", val)
-    end
+    ngx.say(key, ": ", val)
 end
 ngx.say("-------------------------")
 
