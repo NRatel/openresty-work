@@ -47,7 +47,7 @@ local ok, err, errcode, sqlstate = db:connect {
     port = 3306,
     database = "game001",
     user = "gamer",
-    password = "gamer",
+    password = "000000",
     charset = "utf8",
     max_packet_size = 1024 * 1024,
 }

@@ -27,7 +27,7 @@ function _M:test()
         port = 3306,
         database = "test",
         user = "test",
-        password = "000000",
+        password = "test",
         charset = "utf8",
         max_packet_size = 1024 * 1024,
     }
