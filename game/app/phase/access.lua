@@ -38,10 +38,7 @@ ngx.req.read_body()
 local postArgs = ngx.req.get_post_args()
 local postData = ngx.req.get_body_data()
 ngx.say("---------POST args---------")
--- ngx.say(serpent.block(postArgs))
-for key, val in pairs(postArgs) do
-    ngx.say(key, ": ", val)
-end
+ngx.say(serpent.block(postArgs))
 ngx.say("-------------------------")
 
 ngx.say("---------POST data---------")
