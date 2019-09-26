@@ -49,7 +49,7 @@ local msgName = commonRequest.msgName
 local msg = cjson.decode(commonRequest.msg)
 
 ngx.say(msgName)
-ngx.say(msg)
+ngx.say(serpent.block(msg))
 -------------------------------------------------------------------------------------------
 --/*解析参数*/--
 
