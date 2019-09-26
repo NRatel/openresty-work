@@ -30,7 +30,7 @@ ngx.say("-------------------------")
 --GET args
 local getArgs = ngx.req.get_uri_args()
 ngx.say("---------GET args---------")
-ngx.say(serpent.block(headers))
+ngx.say(serpent.block(getArgs))
 ngx.say("-------------------------")
 
 --POST args、data  -- 解析 body 参数之前一定要先读取 body
